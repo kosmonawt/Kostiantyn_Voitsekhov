@@ -1,15 +1,16 @@
 package com.epam.spring.homework1.other;
 
 import com.epam.spring.homework1.bean.BeanC;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class OtherBeanC {
 
-    @Autowired
-    private BeanC beanC;
+    //    @Autowired
+    private final BeanC beanC;
 
-    public OtherBeanC() {
+    public OtherBeanC(BeanC beanC) {
+        this.beanC = beanC;
         System.out.println(this.getClass().getSimpleName() + " " + beanC.getClass().getSimpleName() + " was injected through field");
     }
 }
