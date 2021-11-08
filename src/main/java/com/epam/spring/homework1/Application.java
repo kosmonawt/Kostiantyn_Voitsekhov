@@ -10,8 +10,6 @@ public class Application {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
 
-        //Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
-
         Pet pet = context.getBean(Pet.class);
         pet.printPets();
 

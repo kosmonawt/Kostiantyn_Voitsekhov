@@ -14,22 +14,5 @@ import org.springframework.context.annotation.Import;
 @Import(OtherConfig.class)
 public class BeanConfig {
 
-    @Bean
-    public BeanA beanA() {
-        return new BeanA();
-    }
-
-    @Bean
-    @Qualifier("beanB")
-    public BeanB beanB() {
-        return new BeanB();
-    }
-
-    @Bean
-    @Qualifier("beanC")
-    public BeanC beanC() {
-        return new BeanC();
-    }
-
 
 }
