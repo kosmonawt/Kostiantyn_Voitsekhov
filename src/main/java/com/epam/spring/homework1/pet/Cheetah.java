@@ -9,6 +9,5 @@ public class Cheetah implements Animal {
 
 
     public Cheetah() {
-        System.out.println(this.getClass().getSimpleName());
     }
 }

@@ -8,6 +8,5 @@ import org.springframework.stereotype.Component;
 public class Spider implements Animal {
 
     public Spider() {
-        System.out.println(this.getClass().getSimpleName());
     }
 }

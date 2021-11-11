@@ -15,9 +15,8 @@ public class Pet {
   }
 
   public void printPets() {
-//    animals.forEach(System.out::println);
+    animals.forEach(s -> System.out.println(s.getClass().getSimpleName()));
 
-    // TODO check  instance of Animal than print
   }
 
 }
