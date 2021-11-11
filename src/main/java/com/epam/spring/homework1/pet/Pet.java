@@ -1,22 +1,24 @@
 package com.epam.spring.homework1.pet;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class Pet {
 
-    @Autowired
-    private List<Animal> animals;
+  @Autowired
+  private List<Animal> animals;
 
-    public Pet() {
+  public Pet() {
 
-    }
+  }
 
-    public void printPets() {
-        animals.forEach(animal -> System.out.println(animal.getClass().getSimpleName()));
-    }
+  public void printPets() {
+//    animals.forEach(System.out::println);
+
+    // TODO check  instance of Animal than print
+  }
 
 }
+

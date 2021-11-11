@@ -10,6 +10,19 @@ import org.springframework.context.annotation.*;
 public class PetConfig {
 
     @Bean
+    public Dog dog(){
+        return new Dog();
+    }
+
+    @Bean
+    @DependsOn("dog")
+    public Cat cat(){
+        return new Cat();
+    }
+
+
+
+    @Bean
     @Primary
     public Cheetah cheetah1() {
         return new Cheetah();
