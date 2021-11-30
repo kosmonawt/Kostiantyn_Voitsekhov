@@ -1,7 +1,6 @@
 package com.epam.spring.payments.repo;
 
 import com.epam.spring.payments.model.Account;
-import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -13,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface AccountRepo extends JpaRepository<Account, Long> {
 
-  List<Account> findAllByUserLogin(String email);
 
   @Modifying
   @Transactional(isolation = Isolation.READ_COMMITTED)

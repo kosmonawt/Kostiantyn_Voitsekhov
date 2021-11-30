@@ -55,6 +55,10 @@ public class UserServiceImpl implements UserService {
     }
   }
 
+  public UserDTO find(String email, List<String> password){
+    return new UserDTO();
+  }
+
   public UserDTO getUserById(Long userId) {
     return mapper.mapTo(repo.getById(userId));
   }

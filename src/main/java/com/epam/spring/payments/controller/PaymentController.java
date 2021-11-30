@@ -2,7 +2,6 @@ package com.epam.spring.payments.controller;
 
 import com.epam.spring.payments.dto.PaymentDTO;
 import com.epam.spring.payments.service.PaymentService;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -18,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
+
   private final Logger log = LoggerFactory.getLogger(PaymentController.class);
   private final PaymentService paymentService;
 
@@ -25,20 +25,16 @@ public class PaymentController {
     this.paymentService = paymentService;
   }
 
-  @GetMapping("/all")
-  @ResponseStatus(HttpStatus.OK)
-  public List<PaymentDTO> getAllPayments(){
-  return paymentService.getAllPayments();
-  }
 
   @GetMapping("/{id}")
-  public PaymentDTO getPaymentById(@PathVariable Long id){
+  public PaymentDTO getPaymentById(@PathVariable Long id) {
     log.info("Get payment by id");
     return paymentService.getPaymentById(id);
   }
+
   @PostMapping
   @ResponseStatus(HttpStatus.OK)
-  public void savePayment(@RequestBody PaymentDTO paymentDTO){
+  public void savePayment(@RequestBody PaymentDTO paymentDTO) {
     log.info("Saving payment");
     paymentService.save(paymentDTO);
   }

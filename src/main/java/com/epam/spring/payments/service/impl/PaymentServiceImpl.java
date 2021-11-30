@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 public class PaymentServiceImpl implements PaymentService {
 
   private final Logger log = LoggerFactory.getLogger(CardServiceImpl.class);
-
   private final PaymentRepo repo;
   private final PaymentMapper mapper;
 
@@ -24,11 +23,6 @@ public class PaymentServiceImpl implements PaymentService {
     this.mapper = mapper;
   }
 
-  @Override
-  public List<PaymentDTO> getAllPayments() {
-    log.info("get all payments");
-    return mapper.mapListTo(repo.findAll());
-  }
 
   @Override
   public PaymentDTO getPaymentById(Long id) {

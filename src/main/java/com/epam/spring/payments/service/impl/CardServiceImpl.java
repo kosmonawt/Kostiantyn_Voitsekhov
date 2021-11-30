@@ -4,7 +4,6 @@ import com.epam.spring.payments.dto.CardDTO;
 import com.epam.spring.payments.mapper.CardMapper;
 import com.epam.spring.payments.repo.CardRepo;
 import com.epam.spring.payments.service.CardService;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -19,13 +18,6 @@ public class CardServiceImpl implements CardService {
   public CardServiceImpl(CardRepo repo, CardMapper mapper) {
     this.repo = repo;
     this.mapper = mapper;
-  }
-
-
-  @Override
-  public List<CardDTO> findAllCardsByUserEmail(String email) {
-    log.info("Search for card by acc number");
-    return mapper.mapListTo(repo.findAllByUserEmail(email));
   }
 
   @Override

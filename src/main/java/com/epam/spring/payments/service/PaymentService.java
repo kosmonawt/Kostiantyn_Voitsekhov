@@ -5,7 +5,6 @@ import java.util.List;
 
 public interface PaymentService {
 
-  List<PaymentDTO> getAllPayments();
 
   PaymentDTO getPaymentById(Long id);
 

@@ -4,7 +4,6 @@ import com.epam.spring.payments.dto.AccountDTO;
 import com.epam.spring.payments.mapper.AccountMapper;
 import com.epam.spring.payments.repo.AccountRepo;
 import com.epam.spring.payments.service.AccountService;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -24,11 +23,6 @@ public class AccountServiceImpl implements AccountService {
     this.mapper = mapper;
   }
 
-  @Override
-  public List<AccountDTO> findAllByUserEmail(String email) {
-    log.info("Get accs from service by email");
-    return mapper.mapListTo(accountRepo.findAllByUserLogin(email));
-  }
 
   @Override
   public void save(AccountDTO accountDTO) {

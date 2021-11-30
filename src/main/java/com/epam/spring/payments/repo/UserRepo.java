@@ -16,6 +16,8 @@ public interface UserRepo extends JpaRepository<User, Long> {
 
   User getUserByEmail(String email);
 
+
+
   @Modifying(flushAutomatically = true)
   @Transactional(isolation = Isolation.READ_COMMITTED)
   @Query("update User u set u.name =:name, u.surname =:surname where u.id =:id")

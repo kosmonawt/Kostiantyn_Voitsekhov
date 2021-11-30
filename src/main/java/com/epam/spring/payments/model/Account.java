@@ -1,20 +1,21 @@
 package com.epam.spring.payments.model;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 @javax.persistence.Entity
 public class Account extends Entity {
 
   private static final long serialVersionUID = 4716395168539434663L;
   private final BigDecimal INIT_AMOUNT_CAPACITY = BigDecimal.ZERO;
-  private BigInteger accountNumber;
-  private String userLogin;
   private BigDecimal amount;
   private String currency;
   private String status;
+  @OneToMany
+  private List<Card> cards;
+  @OneToMany
+  private List<Payment> payments;
 
   public Account() {
   }
@@ -25,20 +26,20 @@ public class Account extends Entity {
     this.status = "PENDING";
   }
 
-  public BigInteger getAccountNumber() {
-    return accountNumber;
+  public List<Card> getCards() {
+    return cards;
   }
 
-  public void setAccountNumber(BigInteger accountNumber) {
-    this.accountNumber = accountNumber;
+  public void setCards(List<Card> cards) {
+    this.cards = cards;
   }
 
-  public String getUserLogin() {
-    return userLogin;
+  public List<Payment> getPayments() {
+    return payments;
   }
 
-  public void setUserLogin(String userLogin) {
-    this.userLogin = userLogin;
+  public void setPayments(List<Payment> payments) {
+    this.payments = payments;
   }
 
   public String getCurrency() {

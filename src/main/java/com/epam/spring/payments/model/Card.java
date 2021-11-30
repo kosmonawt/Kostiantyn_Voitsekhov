@@ -15,18 +15,9 @@ public class Card extends Entity {
   private Integer cvv;
   private LocalDate expiryDate;
   private String cardType;
-  private BigInteger accountNum;
 
   public Card() {
 
-  }
-
-  public BigInteger getAccountNum() {
-    return accountNum;
-  }
-
-  public void setAccountNum(BigInteger accountNum) {
-    this.accountNum = accountNum;
   }
 
   public BigInteger getCardNumber() {

@@ -2,6 +2,7 @@ package com.epam.spring.payments.dto;
 
 
 import com.sun.istack.NotNull;
+import java.util.List;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -21,10 +22,18 @@ public class UserDTO {
   private String password;
   private String role;
   private String status;
+  List<AccountDTO> accountDTOList;
 
   public UserDTO() {
   }
 
+  public List<AccountDTO> getAccountDTOList() {
+    return accountDTOList;
+  }
+
+  public void setAccountDTOList(List<AccountDTO> accountDTOList) {
+    this.accountDTOList = accountDTOList;
+  }
 
   public Long getId() {
     return id;

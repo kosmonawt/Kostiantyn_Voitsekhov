@@ -1,10 +1,8 @@
 package com.epam.spring.payments.dto;
 
 import java.math.BigDecimal;
+import java.util.List;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 
@@ -13,36 +11,30 @@ public class AccountDTO {
   @Id
   private Long id;
 
-  @NotNull
-  private Long accountNumber;
-
-  @NotNull
-  @NotEmpty
-  @Email
-  private String userLogin;
-
   @Positive
   private BigDecimal amount;
   private String currency;
   private String status;
+  private List<CardDTO> cardDTOS;
+  private List<PaymentDTO> paymentDTOList;
 
   public AccountDTO() {
   }
 
-  public Long getAccountNumber() {
-    return accountNumber;
+  public List<CardDTO> getCardDTOS() {
+    return cardDTOS;
   }
 
-  public void setAccountNumber(Long accountNumber) {
-    this.accountNumber = accountNumber;
+  public void setCardDTOS(List<CardDTO> cardDTOS) {
+    this.cardDTOS = cardDTOS;
   }
 
-  public String getUserLogin() {
-    return userLogin;
+  public List<PaymentDTO> getPaymentDTOList() {
+    return paymentDTOList;
   }
 
-  public void setUserLogin(String userLogin) {
-    this.userLogin = userLogin;
+  public void setPaymentDTOList(List<PaymentDTO> paymentDTOList) {
+    this.paymentDTOList = paymentDTOList;
   }
 
   public Long getId() {

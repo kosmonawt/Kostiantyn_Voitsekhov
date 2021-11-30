@@ -1,6 +1,7 @@
 package com.epam.spring.payments.model;
 
-import javax.persistence.OneToOne;
+import java.util.List;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @javax.persistence.Entity
@@ -15,12 +16,21 @@ public class User extends Entity {
   private String password;
   private String role;
   private String status;
+  @OneToMany
+  private List<Account> accounts;
 
   public User() {
     this.role = "USER";
     this.status = "ACTIVE";
   }
 
+  public List<Account> getAccounts() {
+    return accounts;
+  }
+
+  public void setAccounts(List<Account> accounts) {
+    this.accounts = accounts;
+  }
 
   public String getName() {
     return name;
